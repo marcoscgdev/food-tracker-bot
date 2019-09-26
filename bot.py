@@ -18,7 +18,7 @@ def main():
     first_name = data['message']['chat']['first_name']
 
     if message == '/start':
-        sendMessage(chat_id, 'Welcome {first_name}! Start by sending me pictures of your food.')
+        sendMessage(chat_id, 'Welcome ' + first_name + '! Start by sending me pictures of your food.')
         
     if message == '/about':
         sendMessage(chat_id, 'A simple an easy to use food tracker bot. Made by Marcos Calvo and Marcos Caballero.')
