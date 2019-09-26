@@ -22,6 +22,8 @@ def main():
         
     if message == '/about':
         sendMessage(chat_id, 'A simple an easy to use food tracker bot. Made by Marcos Calvo and Marcos Caballero.')
+        
+    sendMessage(chat_id, data)
 
     return ''
 
