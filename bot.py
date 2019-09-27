@@ -16,7 +16,7 @@ def send_help(message):
 
 @bot.message_handler(content_types=['photo'])
 def photo(message):
-    file_path = "https://api.telegram.org/file/botTOKEN/" + bot.get_file(message.photo[-1].file_id).file_path
+    file_path = "https://api.telegram.org/file/bot" + TOKEN + "/" + bot.get_file(message.photo[-1].file_id).file_path
     bot.send_message(message.chat.id, file_path)
     
 bot.polling()
