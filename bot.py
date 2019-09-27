@@ -13,6 +13,11 @@ def send_welcome(message):
 def send_help(message):
     bot.reply_to(message, "Simply send me a picture of your foods. Then use /weekly or /daily commands to view the kcal report.")
 
+@bot.message_handler(content_types=['photo'])
+def photo(message):
+    file_path = bot.get_file(message.photo[-1].file_id).file_path
+    bot.send_message(message.chat.id, file_path)
+    
 bot.polling()
 
 @server.route('/', methods=['POST'])
