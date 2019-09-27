@@ -1,6 +1,5 @@
 import os
 import telebot
-from flask import Flask, request
 
 bot = telebot.TeleBot(os.environ["BOT_KEY"])
 
