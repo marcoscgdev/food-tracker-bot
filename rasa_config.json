@@ -1,0 +1,5 @@
+{
+  "pipeline": "chatbot_sklearn",
+  "path" : "./",
+  "data" : "./data/chatbox-data.json"
+}
