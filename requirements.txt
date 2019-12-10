@@ -11,6 +11,7 @@ scipy
 argparse
 scikit-learn
 h5py
+opencv-python
 pillow
 tensorflow
 pyTelegramBotAPI
