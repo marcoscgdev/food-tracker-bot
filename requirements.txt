@@ -7,7 +7,6 @@ spacy
 keras
 numpy
 pandas
-cv2
 opencv
 scipy
 argparse
