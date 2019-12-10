@@ -9,7 +9,6 @@ numpy
 pandas
 scipy
 argparse
-collections
 scikit-learn
 h5py
 pillow
