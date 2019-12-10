@@ -7,7 +7,6 @@ spacy
 keras
 numpy
 pandas
-opencv
 scipy
 argparse
 collections
