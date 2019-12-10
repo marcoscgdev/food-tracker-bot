@@ -1,6 +1,7 @@
 import os
 from flask import Flask, request
-from model_manager import ModelManager
+#from model_manager import ModelManager
+from ObjectDetection.predict import predict
 import telebot
 
 TOKEN = os.environ["BOT_KEY"]
