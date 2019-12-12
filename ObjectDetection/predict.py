@@ -34,4 +34,4 @@ def predict(image):
 	prediction = np.round(model.predict(img)[0])
 	labels = [categories[idx] for idx, current_prediction in enumerate(prediction) if current_prediction == 1]
 
-	print('Prediction:', labels)
+	return labels
