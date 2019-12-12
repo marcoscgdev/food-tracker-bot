@@ -15,7 +15,7 @@ from keras.applications import ResNet50, MobileNet, Xception, DenseNet121
 from sklearn.metrics import f1_score
 from sklearn.model_selection import train_test_split
 
-from k_model import build_model
+from ObjectDetection.k_model import build_model
 
 def predict(image):
 	os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
