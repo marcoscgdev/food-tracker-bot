@@ -11,7 +11,7 @@ scipy
 argparse
 scikit-learn
 h5py
-opencv-python==2.4.9
+opencv-contrib-python-headless
 pillow
 tensorflow
 pyTelegramBotAPI
