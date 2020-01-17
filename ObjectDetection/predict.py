@@ -16,7 +16,7 @@ from sklearn.metrics import f1_score
 from sklearn.model_selection import train_test_split
 
 from ObjectDetection.k_model import build_model
-from ObjectDetection.downloader import download_if_not_exists
+#from ObjectDetection.downloader import download_if_not_exists
 
 def predict(image):
 	os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
@@ -26,7 +26,8 @@ def predict(image):
 	'healthy', 'junk', 'dessert', 'appetizer', 'mains', 'soups', 'carbs', 'protein', 'fats', 'meat'
 	]
 
-	download_if_not_exists('model.h5', 'http://insertbrain.universidadsanjorge.net/uploads/model.h5')
+	#download_if_not_exists('model.h5', 'http://insertbrain.universidadsanjorge.net/uploads/model.h5')
+	print(image)
 
 	model = build_model('inference', model_path = 'model.h5')
 	img = np.expand_dims(cv2.imread(image, 1), axis = 0)

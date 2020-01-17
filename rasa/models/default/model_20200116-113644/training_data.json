@@ -1,0 +1,56 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "intent": "greet",
+        "text": "hey"
+      },
+      {
+        "intent": "greet",
+        "text": "hola"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas"
+      },
+      {
+        "intent": "greet",
+        "text": "buenos dias"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas tardes"
+      },
+      {
+        "intent": "greet",
+        "text": "buenas noches"
+      },
+      {
+        "intent": "bye",
+        "text": "adios"
+      },
+      {
+        "intent": "bye",
+        "text": "hasta luego"
+      },
+      {
+        "intent": "bye",
+        "text": "hasta nunca"
+      },
+      {
+        "intent": "bye",
+        "text": "nos vemos"
+      },
+      {
+        "intent": "bye",
+        "text": "hasta mañana"
+      },
+      {
+        "intent": "bye",
+        "text": "te veo luego"
+      }
+    ],
+    "regex_features": [],
+    "entity_synonyms": []
+  }
+}

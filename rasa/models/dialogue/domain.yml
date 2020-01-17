@@ -1,0 +1,20 @@
+action_factory: null
+action_names:
+- utter_greet
+- utter_bye
+actions:
+- utter_greet
+- utter_bye
+config:
+  store_entities_as_slots: true
+entities: []
+intents:
+- greet
+- bye
+slots: {}
+templates:
+  utter_bye:
+  - text: ¡Hasta la vista!
+  utter_greet:
+  - text: ¡Hola!
+topics: []

@@ -1,0 +1,14 @@
+intents:
+  - greet
+  - bye
+
+actions:
+- utter_greet
+- utter_bye
+
+templates:
+  utter_greet:
+  - text: "¡Hola!"
+
+  utter_bye:
+  - text: "¡Hasta la vista!"
