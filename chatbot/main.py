@@ -1,7 +1,8 @@
 import os
-from flask import Flask, render_template, request
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer, ChatterBotCorpusTrainer
+import chatterbot.comparisons
+import chatterbot.response_selection
 
 # chatterbot - corpus
 
@@ -10,19 +11,18 @@ def train():
         storage_adapter = 'chatterbot.storage.SQLStorageAdapter',
         logic_adapters = [{
                 'import_path': 'chatterbot.logic.BestMatch',
+            	'statement_comparison_function': chatterbot.comparisons.levenshtein_distance,
+            	'response_selection_method': chatterbot.response_selection.get_most_frequent_response,
                 'default_response': 'Lo siento, no te he entendido.',
                 'maximum_similarity_threshold': 0.7
             },
             {
-                'import_path': "chatterbot.logic.MathematicalEvaluation"
-            },
-            {
-                'import_path': 'chatterbot.logic.TimeLogicAdapter',
+                'import_path': 'chatterbot.logic.MathematicalEvaluation'
             }
         ],
-        input_adapter = "chatterbot.input.TerminalAdapter",
-        output_adapter = "chatterbot.output.TerminalAdapter",
-        database_uri = 'sqlite:///database.sqlite3'
+        input_adapter = 'chatterbot.input.TerminalAdapter',
+        output_adapter = 'chatterbot.output.TerminalAdapter',
+        database_uri = 'sqlite:///chatbot-database.sqlite3'
     )
 
     general_trainer = ChatterBotCorpusTrainer(chatbot)

@@ -29,7 +29,7 @@ def predict(image):
 	#download_if_not_exists('model.h5', 'http://insertbrain.universidadsanjorge.net/uploads/model.h5')
 	print(image)
 
-	model = build_model('inference', model_path = 'model.h5')
+	model = build_model('inference', model_path = 'mobilenet_model.h5')
 	img = np.expand_dims(cv2.imread(image, 1), axis = 0)
 
 	for i in range(3):
