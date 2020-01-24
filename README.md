@@ -12,6 +12,9 @@ Telegram bot that, based on the photos you send to, tells if you should improve 
 ### Requirements
 
 - [Python 3.6.1](https://www.python.org/downloads/release/python-361/)
+
+#### Libraries
+
 - [Flask 1.1.1](https://www.palletsprojects.com/p/flask/)
 - [pyTelegramBotAPI 3.6.6](https://github.com/eternnoir/pyTelegramBotAPI)
 - [Pillow 7.0.0](https://pillow.readthedocs.io/en/stable/index.html)
