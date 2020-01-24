@@ -44,7 +44,7 @@ Telegram bot that, based on the photos you send to, tells if you should improve 
 
 1. __Create the Telegram bot profile__
 
-   To create the bot profile you can use an integrated Telegram bot called “Bot Father”. With this bot, you can create new bots by filling the name, description, image and commands. This bot will give you a token (TELEGRAM_BOT_TOKEN) that you have to use in the server to get all user info and messages. You have to add this token in the _bot.py_ file.
+   To create the bot profile you can use an integrated Telegram bot called “Bot Father”. With this bot, you can create new bots by filling the name, description, image and commands. This bot will give you a token (```TELEGRAM_BOT_TOKEN```) that you have to use in the server to get all user info and messages. You have to add this token in the [_bot.py_](https://github.com/mcalvog/food-tracker-bot/blob/master/bot.py) file.
 
 2. __Setup server__
 
