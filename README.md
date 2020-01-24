@@ -27,6 +27,11 @@ Telegram bot that, based on the photos you send to, tells if you should improve 
 │   ├── data                 # Some training data
 │   ├── main.py              # Main chatbot class
 │
+├── food_classifier          # Food classifier module
+│   ├── k_model.py           # Used to build the keras model with some architectures to choose
+│   ├── predict.py           # Script to obtain a prediction from an image
+│   └── train.py             # Script to train the model
+│
 ├── rasa                     # Unused module with rasa chatbot implementation
 │   ├── data                 # Some training data
 │   ├── models               # Trained models
@@ -54,4 +59,4 @@ Telegram bot that, based on the photos you send to, tells if you should improve 
    
 3. __Use the bot!__
 
-   You are now ready to use the bot :)
+   You are ready to use the bot :)
