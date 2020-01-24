@@ -36,6 +36,22 @@ Telegram bot that, based on the photos you send to, tells if you should improve 
 ├── utils                    # Some project utilities
 │   ├── download_image.py    # Script to download and resize online image
 │   ├── generate_message.py  # Script to transform food tags to and end-user message
+│
+├── bot.py                   # Main bot class
 ```
    
 ### Deployment
+
+1. __Create the Telegram bot profile__
+
+   To create the bot profile you can use an integrated Telegram bot called “Bot Father”. With this bot, you can create new bots by filling the name, description, image and commands. This bot will give you a token (TELEGRAM_BOT_TOKEN) that you have to use in the server to get all user info and messages. You have to add this token in the _bot.py_ file.
+
+2. __Setup server__
+
+   You can setup the bot server remotely or on a local machine. You only have to run the _bot.py_ file on the machine where you want to host the server with the command ```python3 bot.py```.
+   
+   After that, you have to tell Telegram API your server url (weebhook). To do that, you simply has to enter this website: ```https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/setWebhook?url={WEBHOOK_URL}```. The url has to be __public__ and with a __SSL__ certificate (https). If you are using a local machine, you will have to make a tunnel to your local url (See: [NGROK](https://ngrok.com/) utility).
+   
+3. __Use the bot!__
+
+   You are now ready to use the bot :)
