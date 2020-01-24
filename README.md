@@ -8,15 +8,18 @@ A simple an easy to use food tracker Telegram bot.
 Telegram bot that, based on the photos you send to, tells if you should improve or not your diet based on how healthy or unhealthy is the food you eat on a weekly basis. Users can also have a conversation with the bot as if it were a human.
 
 ## Developing
-
+pandas, argparse, cv2, keras, sklearn
 ### Requirements
 
 - [Python 3.6.1](https://www.python.org/downloads/release/python-361/)
 - [Flask](https://www.palletsprojects.com/p/flask/)
 - [pyTelegramBotAPI 3.6.7](https://github.com/eternnoir/pyTelegramBotAPI)
-- [urllib](https://docs.python.org/3/library/urllib.html)
 - [Pillow 7.0.0](https://pillow.readthedocs.io/en/stable/index.html)
 - [ChatterBot 1.0.5](https://chatterbot.readthedocs.io/en/stable/quickstart.html)
+- [Pandas](https://pandas.pydata.org/)
+- [Keras](https://keras.io/)
+- [scikit-learn](https://scikit-learn.org/stable/)
+- OpenCV
 
 ### Getting Started
 
@@ -45,7 +48,7 @@ Telegram bot that, based on the photos you send to, tells if you should improve 
 │
 ├── utils                    # Some project utilities
 │   ├── download_image.py    # Script to download and resize online image
-│   └── generate_message.py  # Script to transform food tags to and end-user message
+│   └── generate_message.py  # Script to transform food tags to an end-user message
 │
 ├── bot.py                   # Main bot class
 ```
