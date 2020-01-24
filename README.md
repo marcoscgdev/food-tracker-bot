@@ -8,18 +8,18 @@ A simple an easy to use food tracker Telegram bot.
 Telegram bot that, based on the photos you send to, tells if you should improve or not your diet based on how healthy or unhealthy is the food you eat on a weekly basis. Users can also have a conversation with the bot as if it were a human.
 
 ## Developing
-pandas, argparse, cv2, keras, sklearn
+
 ### Requirements
 
 - [Python 3.6.1](https://www.python.org/downloads/release/python-361/)
-- [Flask](https://www.palletsprojects.com/p/flask/)
-- [pyTelegramBotAPI 3.6.7](https://github.com/eternnoir/pyTelegramBotAPI)
+- [Flask 1.1.1](https://www.palletsprojects.com/p/flask/)
+- [pyTelegramBotAPI 3.6.6](https://github.com/eternnoir/pyTelegramBotAPI)
 - [Pillow 7.0.0](https://pillow.readthedocs.io/en/stable/index.html)
-- [ChatterBot 1.0.5](https://chatterbot.readthedocs.io/en/stable/quickstart.html)
-- [Pandas](https://pandas.pydata.org/)
-- [Keras](https://keras.io/)
-- [scikit-learn](https://scikit-learn.org/stable/)
-- OpenCV
+- [chatterBot 1.0.5](https://chatterbot.readthedocs.io/en/stable/quickstart.html)
+- [pandas 0.25.3](https://pandas.pydata.org/)
+- [keras 2.2.4](https://keras.io/)
+- [scikit-learn 0.22.1](https://scikit-learn.org/stable/)
+- [opencv-contrib-python-headless 4.1.2.30](https://pypi.org/project/opencv-contrib-python-headless/)
 
 ### Getting Started
 
@@ -50,7 +50,7 @@ pandas, argparse, cv2, keras, sklearn
 │   ├── download_image.py    # Script to download and resize online image
 │   └── generate_message.py  # Script to transform food tags to an end-user message
 │
-├── bot.py                   # Main bot class
+└── bot.py                   # Main bot class
 ```
    
 ### Deployment
