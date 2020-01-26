@@ -53,7 +53,9 @@ Telegram bot that, based on the photos you send to, tells if you should improve 
 │   ├── download_image.py    # Script to download and resize online image
 │   └── generate_message.py  # Script to transform food tags to an end-user message
 │
-└── bot.py                   # Main bot class
+├── bot.py                   # Main bot class
+│
+└── mobilenet_model.h5       # Trained model using MobileNet
 ```
    
 ### Deployment
