@@ -12,7 +12,7 @@ from keras.models import Model, load_model
 from keras.layers import Dense, Input, Flatten
 from keras.applications import ResNet50, MobileNet, Xception, DenseNet121
 
-from sklearn.metrics import f1_score
+from sklearn.metrics import f1_score, confusion_matrix, classification_report
 from sklearn.model_selection import train_test_split
 
 from k_model import build_model
@@ -116,3 +116,21 @@ if __name__ == '__main__':
 
     score = F1_score(testY, model.predict(testX).round())
     print('F1 Score =', score)
+
+    ## Confusion matrix (Un diez para Marcos Calvo :P)
+
+    y_true = valY
+    y_pred = model.predict_classes(valX)
+    con_mat = confusion_matrix(y_true, y_pred)
+    print('Confusion matrix: ')
+    print(con_mat)
+
+    ## Classification report
+
+    categories = [
+    'healthy', 'junk', 'dessert', 'appetizer', 'mains', 'soups', 'carbs', 'protein', 'fats', 'meat'
+    ]
+
+    classif_report = classification_report(y_true, y_pred, target_names=categories)
+    print('Classification report: ')
+    print(classif_report)

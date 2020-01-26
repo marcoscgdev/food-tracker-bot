@@ -2,16 +2,18 @@ import os
 import time
 import re
 from flask import Flask, request
-from ObjectDetection.predict import predict
+from food_classifier.predict import predict
 from utils.download_image import download_image
 from utils.generate_message import generate_message
 from chatbot.main import train, response
 import telebot
 
 TOKEN = "YOUR_TOKEN"
+userInputText = ""
+listenUser = False
 bot = telebot.TeleBot(TOKEN)
 server = Flask(__name__)
-chatbot = train()
+chatbot, user_trainer = train()
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
@@ -27,7 +29,27 @@ def send_about(message):
 
 @bot.message_handler(content_types=['text'])
 def reply(message):
-    bot.reply_to(message, response(chatbot, message.text))
+    global listenUser
+    global userInputText
+    # Si estamos esperando una respuesta para entrenar al bot, lo hacemos
+    if listenUser:
+        user_trainer.train([userInputText, fix_symbols(str(message.text))])
+        listenUser = False
+        bot.reply_to(message, "Ok, me acordaré para la próxima vez.")
+        return
+
+    # Guardamos el mensaje del usuario
+    userInputText = fix_symbols(str(message.text))
+
+    # Obtenemos la respuesta
+    text_response = str(response(chatbot, userInputText))
+
+    # Si no se encuentra la respuesta, preguntamos al usuario cual deberia ser
+    if text_response is "RESPONSE_NOT_FOUND":
+        bot.reply_to(message, "Lo siento, no te he entendido. ¿Qué debería haber dicho?")
+        listenUser = True
+    else:
+        bot.reply_to(message, text_response)
 
 @bot.message_handler(content_types=['photo'])
 def photo(message):
@@ -49,6 +71,17 @@ def telegram_polling():
         bot.stop_polling()
         time.sleep(10)
         telegram_polling()
+
+def fix_symbols(text):
+    # fix questions
+    if text.endswith('?') and not text.startswith('¿'):
+        text = "¿" + text;
+
+    # fix exclamations
+    if text.endswith('!') and not text.startswith('¡'):
+        text = "¡" + text;
+
+    return text
 
 if __name__ == "__main__":
    server.run(host="localhost", port=int(os.environ.get('PORT', 8000)))

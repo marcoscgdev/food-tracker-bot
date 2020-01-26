@@ -45,8 +45,8 @@ def build_model(mode, model_name = None, model_path = None):
 
         final_layer = model.layers[-1].output
 
-        dense_layer_1 = Dense(128, activation = 'relu')(final_layer)
-        output_layer = Dense(10, activation = 'sigmoid')(dense_layer_1)
+        dense_layer_1 = Dense(128, activation = 'relu')(final_layer) # funcion activacion
+        output_layer = Dense(10, activation = 'sigmoid')(dense_layer_1) # funcion activacion
 
         model = Model(input = img, output = output_layer)
         model.compile(optimizer = 'adam', loss = 'binary_crossentropy' , metrics = ['accuracy'])

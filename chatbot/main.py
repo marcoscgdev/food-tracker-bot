@@ -11,13 +11,8 @@ def train():
         storage_adapter = 'chatterbot.storage.SQLStorageAdapter',
         logic_adapters = [{
                 'import_path': 'chatterbot.logic.BestMatch',
-            	'statement_comparison_function': chatterbot.comparisons.levenshtein_distance,
-            	'response_selection_method': chatterbot.response_selection.get_most_frequent_response,
-                'default_response': 'Lo siento, no te he entendido.',
+                'default_response': 'RESPONSE_NOT_FOUND',
                 'maximum_similarity_threshold': 0.7
-            },
-            {
-                'import_path': 'chatterbot.logic.MathematicalEvaluation'
             }
         ],
         input_adapter = 'chatterbot.input.TerminalAdapter',
@@ -26,27 +21,19 @@ def train():
     )
 
     general_trainer = ChatterBotCorpusTrainer(chatbot)
+    user_trainer = ListTrainer(chatbot) # for user inputs
+
+    # Podriamos comparar si la base de datos ya existe para evitar entrenarlo de nuevo
 
     general_trainer.train(
         "chatterbot.corpus.spanish",
-        "chatbot/data/conversation.yml",
         "chatbot/data/emociones.yml",
         "chatbot/data/greetings.yml",
         "chatbot/data/perfilbot.yml",
-        "chatbot/data/psicologia.yml",
-        "chatbot/data/trivia.yml",
-        "chatbot/data/IA.yml"
+        "chatbot/data/psicologia.yml"
     )
 
-    return chatbot
+    return chatbot, user_trainer
 
 def response(chatbot, text):
-    # fix questions
-    if text.endswith('?') and not text.startswith('¿'):
-        text = "¿" + text;
-
-    # fix exclamations
-    if text.endswith('!') and not text.startswith('¡'):
-        text = "¡" + text;
-
     return chatbot.get_response(text)

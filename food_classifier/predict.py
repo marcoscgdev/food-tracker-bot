@@ -15,8 +15,7 @@ from keras.applications import ResNet50, MobileNet, Xception, DenseNet121
 from sklearn.metrics import f1_score
 from sklearn.model_selection import train_test_split
 
-from ObjectDetection.k_model import build_model
-#from ObjectDetection.downloader import download_if_not_exists
+from food_classifier.k_model import build_model
 
 def predict(image):
 	os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
@@ -26,7 +25,6 @@ def predict(image):
 	'healthy', 'junk', 'dessert', 'appetizer', 'mains', 'soups', 'carbs', 'protein', 'fats', 'meat'
 	]
 
-	#download_if_not_exists('model.h5', 'http://insertbrain.universidadsanjorge.net/uploads/model.h5')
 	print(image)
 
 	model = build_model('inference', model_path = 'mobilenet_model.h5')
